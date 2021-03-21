@@ -1,0 +1,9 @@
+<input
+  type="checkbox"
+  [name]="name"
+  [id]="id"
+  [(ngModel)]="value"
+  (ngModelChange)="onChange($event)"
+  (blur)="onTouched()"
+/>
+<label [class.checked]="value" [for]="id"> <ng-content></ng-content> </label>

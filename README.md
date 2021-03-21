@@ -1,4 +1,4 @@
-# ConfBoilerplte
+# ng-conf-2021-workshop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
