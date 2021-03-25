@@ -1,5 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+  FormGroup,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-filters',
@@ -20,8 +25,6 @@ export class FiltersComponent implements OnInit, ControlValueAccessor {
     filterTwo: false,
     filterThree: false,
   });
-
-  // readonly filterOneControl: AbstractControl = this.form.controls.filterOne;
 
   constructor(private formBuilder: FormBuilder) {}
 

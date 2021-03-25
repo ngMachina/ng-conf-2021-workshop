@@ -1,56 +1,35 @@
 :host {
-  display: block;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
+  @apply block absolute w-full z-10;
+}
 
-  nav {
-    width: 100%;
+nav {
+  @apply w-full;
 
-    > ul {
-      display: flex;
-      width: 100%;
-      justify-content: center;
+  > ul {
+    @apply flex justify-center w-full list-none my-0 pl-0;
 
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0;
-      margin-bottom: 0;
+    > li {
+      > h2 {
+        @apply p-4 inline-block cursor-pointer leading-4;
+      }
 
-      > li {
-        > a {
-          padding: 1rem;
-          line-height: 1rem;
-          display: inline-block;
-          cursor: pointer;
-        }
-
-        &:hover {
-          background: rgba(#000, 0.1);
-          > ul {
-            display: block;
-          }
-        }
-
+      &:hover {
+        background: rgba(#000, 0.1);
         > ul {
-          list-style: none;
-          padding-left: 0;
-          margin-top: 0;
-          margin-bottom: 0;
-          font-weight: 300;
-          text-transform: none;
-          display: none;
-          position: absolute;
-          min-width: 12rem;
-          max-width: 18rem;
-          background: rgba(#000, 0.1);
+          @apply block;
+        }
+      }
 
-          > li {
-            padding: 1rem;
-            cursor: pointer;
-            &:hover {
-              background: rgba(#000, 0.1);
-            }
+      > ul {
+        @apply list-none my-0 pl-0 absolute hidden normal-case;
+        min-width: 12rem;
+        max-width: 18rem;
+        background: rgba(#000, 0.1);
+
+        > li {
+          @apply p-4 cursor-pointer;
+          &:hover {
+            background: rgba(#000, 0.1);
           }
         }
       }

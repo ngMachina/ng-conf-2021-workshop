@@ -1,4 +1,7 @@
 <ng-container [formGroup]="form">
-  <app-search-bar [formControlName]="'search'" (buttonClicked)="handleFormSubmit()"></app-search-bar>
+  <app-search-bar
+    [formControlName]="'search'"
+    (buttonClicked)="handleFormSubmit()"
+  ></app-search-bar>
   <app-filters [formControlName]="'filters'"></app-filters>
 </ng-container>

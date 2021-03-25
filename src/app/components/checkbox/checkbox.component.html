@@ -6,4 +6,11 @@
   (ngModelChange)="onChange($event)"
   (blur)="onTouched()"
 />
-<label [class.checked]="value" [for]="id"> <ng-content></ng-content> </label>
+<label
+  [class.checked]="value"
+  [for]="id"
+  tabindex="0"
+  (keypress)="toggle($event)"
+>
+</label>
+<ng-content></ng-content>

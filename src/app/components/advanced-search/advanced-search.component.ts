@@ -1,9 +1,13 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+  FormGroup,
+  FormBuilder,
+  FormControl,
+} from '@angular/forms';
 
-import { save } from '@store/app.actions';
-import { selectSearch, selectAdvancedSearch } from '@store/app.selectors';
+import { AppFacade } from '@store/app.facade';
 
 @Component({
   selector: 'app-advanced-search',
@@ -24,12 +28,10 @@ export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
     filters: new FormControl([]),
   });
 
-  books$ = this.store.pipe(select(selectSearch));
-
-  constructor(private formBuilder: FormBuilder, private store: Store) {}
+  constructor(private formBuilder: FormBuilder, private appFacade: AppFacade) {}
 
   ngOnInit(): void {
-    this.books$.subscribe((v) => console.log('vvv', v));
+    this.appFacade.advancedSearchState$.subscribe((v) => console.log('v', v));
   }
 
   onChange: any = () => {};
@@ -40,18 +42,15 @@ export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
   registerOnChange(fn: any): void {
     this.form.valueChanges.subscribe(fn);
   }
+
   registerOnTouched(fn: any): void {
     this.onTouch = fn;
   }
 
   handleFormSubmit(): void {
-    this.storeAdvancedSearchFormChanges({
+    this.appFacade.dispatchSaveForm({
       search: this.form.controls.search.value,
       filters: this.form.controls.filters.value,
     });
-  }
-
-  private storeAdvancedSearchFormChanges(form: { search: string; filters: string[] }): void {
-    this.store.dispatch(save(form));
   }
 }

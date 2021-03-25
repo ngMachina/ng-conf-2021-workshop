@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+
+:host {
+  @apply flex;
+}
+
+input[type='checkbox'] {
+  @apply hidden;
+}
+
+label {
+  @apply block mr-2 border border-solid cursor-pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-color: $-black;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+
+  &:after {
+    @apply absolute w-0 bg-white;
+    content: '';
+    height: 3px;
+    transform: translate(8px, 16px) rotate(-55deg);
+    transform-origin: left;
+    transition: all 150ms;
+    transition-delay: 0ms;
+  }
+
+  &:before {
+    @apply absolute w-0 bg-white;
+    content: '';
+    height: 3px;
+    transform: translate(3px, 10px) rotate(40deg);
+    transform-origin: left;
+    transition: all 150ms;
+    transition-delay: 150ms;
+  }
+
+  &.checked {
+    background-color: $-red;
+
+    &:before {
+      width: 9px;
+      transition-delay: 0ms;
+    }
+
+    &:after {
+      width: 18px;
+      transition-delay: 150ms;
+    }
+  }
+}

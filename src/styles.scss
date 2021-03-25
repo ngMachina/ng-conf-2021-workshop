@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+// @import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './app/styles/variables.scss';
+
 html,
 body {
   width: 100%;
@@ -15,4 +19,12 @@ html {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+* {
+  outline: none !important;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px $-red, 0px 0px 0px 3px #ffffff;
+  }
 }

@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+:host {
+  @apply flex;
+}
+
+input {
+  @apply px-3 py-2 border border-solid border-black w-full;
+  -webkit-appearance: none;
+  border-color: $-black;
+}
+
+button {
+  @apply border border-solid p-2 text-white px-5 py-3;
+  background-color: $-black;
+  border-color: $-black;
+  transition: background-color 300ms ease, border-color 300ms ease;
+
+  &:hover {
+    background-color: $-red;
+    border-color: $-red;
+  }
+}

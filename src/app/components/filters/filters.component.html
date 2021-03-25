@@ -1,6 +1,11 @@
-<div [formGroup]="form">
-  <app-checkbox [formControlName]="'filterOne'" [id]="'filterOne'"> Filter 1 </app-checkbox>
-  <app-checkbox [formControlName]="'filterTwo'" [id]="'filterTwo'"> Filter 2 </app-checkbox>
-  <app-checkbox [formControlName]="'filterThree'" [id]="'filterThree'"> Filter 3 </app-checkbox>
+<div [formGroup]="form" class="flex">
+  <app-checkbox [formControlName]="'filterOne'" [id]="'filterOne'">
+    Filter 1
+  </app-checkbox>
+  <app-checkbox [formControlName]="'filterTwo'" [id]="'filterTwo'">
+    Filter 2
+  </app-checkbox>
+  <app-checkbox [formControlName]="'filterThree'" [id]="'filterThree'">
+    Filter 3
+  </app-checkbox>
 </div>
-<code>{{ form.value | json }}</code>

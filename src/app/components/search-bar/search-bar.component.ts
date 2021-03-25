@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -17,13 +22,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class SearchBarComponent implements ControlValueAccessor {
   @Output() buttonClicked = new EventEmitter<void>();
 
-  private _value: any = ''; // this is the updated value that the class accesses
+  private _value: string = '';
 
-  get value(): any {
+  get value(): string {
     return this._value;
   }
 
-  set value(value) {
+  set value(value: string) {
     this._value = value;
     this.onChange(this._value);
     this.onTouched();
@@ -33,7 +38,7 @@ export class SearchBarComponent implements ControlValueAccessor {
 
   onTouched: any = () => {};
 
-  writeValue(value: any): void {
+  writeValue(value: string): void {
     if (value !== undefined) {
       this._value = value;
     }

@@ -31,6 +31,12 @@ export class CheckboxComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
+  toggle(event: KeyboardEvent): void {
+    if (event.code === 'Space' || event.code === 'Enter') {
+      this.writeValue(!this._value);
+    }
+  }
+
   onChange: any = () => {};
 
   onTouched: any = () => {};
