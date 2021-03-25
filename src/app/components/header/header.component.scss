@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+:host {
+  @apply block absolute w-full z-10;
+}
+
+img {
+  @apply ml-4 h-8;
+  max-width: 5rem;
+}
+
+nav {
+  @apply w-full flex items-center;
+
+  > ul {
+    @apply flex justify-center w-full list-none my-0 pl-0;
+
+    > li {
+      @apply p-4;
+
+      > a {
+        @apply p-4;
+        transition: color 300ms ease;
+
+        &:hover,
+        &:focus {
+          color: $-red;
+        }
+      }
+    }
+  }
+}

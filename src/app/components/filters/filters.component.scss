@@ -1,3 +1,12 @@
 app-checkbox:not(:first-child) {
-  @apply ml-8;
+  @apply mt-4 md:ml-8 lg:ml-8 md:mt-0 lg:mt-0;
+}
+
+.filter-container {
+  @apply flex flex-col md:flex-row lg:flex-row;
+}
+
+:host {
+  @apply block p-4 w-full;
+  background-color: rgba(255, 255, 255, 0.8);
 }

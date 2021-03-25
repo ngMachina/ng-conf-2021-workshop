@@ -23,7 +23,8 @@
     "paths": {
       "@components/*": ["src/app/components/*"],
       "@pages/*": ["src/app/pages/*"],
-      "@store/*": ["src/app/store/*"]
+      "@store/*": ["src/app/store/*"],
+      "@service/*": ["src/app/services/*"]
     },
   },
   "angularCompilerOptions": {

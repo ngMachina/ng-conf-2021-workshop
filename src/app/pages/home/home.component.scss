@@ -1,3 +1,38 @@
+@import '../../styles/variables.scss';
+
 :host {
   @apply flex justify-center items-center w-full h-full;
+}
+
+form {
+  @apply relative z-10;
+}
+
+img {
+  @apply absolute;
+  max-width: 15rem;
+  filter: blur(7px);
+}
+
+.outer-box {
+  @apply p-4 lg:p-8 relative;
+  background-color: $-black;
+}
+
+.inner-box {
+  @apply py-4 px-4 lg:px-20 lg:py-8 relative flex items-center justify-center flex-col;
+}
+
+h2 {
+  @apply mb-4 lg:mb-8 text-white text-4xl z-10;
+}
+
+.backdrop {
+  @apply h-full w-full absolute overflow-hidden top-0 left-0 z-10;
+  box-shadow: 0 0 1rem 0 rgb(255 255 255 / 15%);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
 }

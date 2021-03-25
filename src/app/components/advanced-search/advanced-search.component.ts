@@ -31,7 +31,9 @@ export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
   constructor(private formBuilder: FormBuilder, private appFacade: AppFacade) {}
 
   ngOnInit(): void {
-    this.appFacade.advancedSearchState$.subscribe((v) => console.log('v', v));
+    this.appFacade.advancedSearchState$.subscribe((state) =>
+      console.log('advancedSearchState$', state)
+    );
   }
 
   onChange: any = () => {};

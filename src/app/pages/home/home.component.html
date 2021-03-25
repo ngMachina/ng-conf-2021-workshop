@@ -1,5 +1,12 @@
-<form [formGroup]="form">
-  <app-advanced-search
-    [formControlName]="'advancedSearch'"
-  ></app-advanced-search>
-</form>
+<div class="outer-box">
+  <div class="inner-box">
+    <img src="assets/rangle-logo-white.png" />
+    <div class="backdrop"></div>
+    <h2>Search</h2>
+    <form [formGroup]="form">
+      <app-advanced-search
+        [formControlName]="'advancedSearch'"
+      ></app-advanced-search>
+    </form>
+  </div>
+</div>

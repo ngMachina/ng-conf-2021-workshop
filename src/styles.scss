@@ -1,6 +1,6 @@
 @import 'tailwindcss/base';
-// @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 @import './app/styles/variables.scss';
 
 html,
@@ -21,7 +21,10 @@ html {
   box-sizing: border-box;
 }
 
-* {
+input,
+button,
+label,
+a {
   outline: none !important;
 
   &:focus {

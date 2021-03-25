@@ -1,0 +1,14 @@
+[
+  {
+    "href": "/",
+    "description": "Home"
+  },
+  {
+    "href": "/additional-page",
+    "description": "About"
+  },
+  {
+    "href": "/additional-page",
+    "description": "Contact"
+  }
+]
