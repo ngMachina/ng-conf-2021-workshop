@@ -222,7 +222,7 @@
   "resolved" "https://registry.npmjs.org/@angular/compiler/-/compiler-9.0.0.tgz"
   "version" "9.0.0"
 
-"@angular/core@~11.2.1":
+"@angular/core@~11.2.1", "@angular/core@11.2.4":
   "integrity" "sha512-MU2DxGJOMLS6rqrakzEKJ2s+CYamM5ETBInqx4uTBJYsek3byF9gbjM6221lv8tal5dMAibigB0UuhXr23rhcQ=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-11.2.4.tgz"
   "version" "11.2.4"
@@ -233,6 +233,13 @@
   "integrity" "sha512-6Pxgsrf0qF9iFFqmIcWmjJGkkCaCm6V5QNnxMy2KloO3SDq6QuMVRbN9RtC8Urmo25LP+eZ6ZgYqFYpdD8Hd9w=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-9.0.0.tgz"
   "version" "9.0.0"
+
+"@angular/elements@^11.2.4":
+  "integrity" "sha512-QosEElUlxKO6FuosnKQ8RcWnCxueUHJTUnW4Ho5h4KN0eT4Mihl3KXTHzFXHSNlYCojepldkiCHCNk6LQyKmtw=="
+  "resolved" "https://registry.npmjs.org/@angular/elements/-/elements-11.2.4.tgz"
+  "version" "11.2.4"
+  dependencies:
+    "tslib" "^2.0.0"
 
 "@angular/forms@~11.2.1":
   "integrity" "sha512-JVjSSj3lvhT5qevyle2s1rVgs8NGUOMaNO6LDDBFEpak5c4AttZXVos9zXVHg//99fG6AUumewFDgR6ksPuQCQ=="
@@ -248,7 +255,7 @@
   dependencies:
     "tslib" "^2.0.0"
 
-"@angular/platform-browser@~11.2.1":
+"@angular/platform-browser@~11.2.1", "@angular/platform-browser@11.2.4":
   "integrity" "sha512-GOHUM6/r+JXCpVSSY+ET/BqkwqHymdvVTOh9/J/pgSlpPT/5lvjDtbPgdhYOkUsMTkZzKjoXLMcQVtZTCqHdfQ=="
   "resolved" "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-11.2.4.tgz"
   "version" "11.2.4"
@@ -3420,6 +3427,11 @@
   "version" "2.0.2"
   dependencies:
     "buffer-indexof" "^1.0.0"
+
+"document-register-element@^1.7.2":
+  "integrity" "sha512-w5UA37hEIrs+9pruo2yR5UD13c4UHDlkqqjt4qurnp7QsBI9b1IOi8WXUim+aCqKBsENX3Z/cso7XMOuwJH1Yw=="
+  "resolved" "https://registry.npmjs.org/document-register-element/-/document-register-element-1.14.10.tgz"
+  "version" "1.14.10"
 
 "dom-serialize@^2.2.1":
   "integrity" "sha1-ViromZ9Evl6jB29UGdzVnrQ6yVs="

@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { HeaderMenu } from './types/header-menu.type';
 
+// noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

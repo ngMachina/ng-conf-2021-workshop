@@ -3,7 +3,7 @@
   <ul>
     <ng-container *ngIf="headerLinks?.length">
       <li *ngFor="let item of headerLinks">
-        <a [routerLink]="item.href"> {{ item.description }} </a>
+        <a [href]="item.href"> {{ item.description }} </a>
       </li>
     </ng-container>
   </ul>
