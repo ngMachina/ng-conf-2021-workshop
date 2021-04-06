@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
 import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
@@ -7,8 +7,8 @@ import {
   FormControl,
 } from '@angular/forms';
 
-import { AppFacade } from '@store/app.facade';
 import { FilterOption } from '@components/filters/filters.type';
+import { SearchEvent } from '@components/advanced-search/advanced-search.type';
 
 @Component({
   selector: 'app-advanced-search',
@@ -23,7 +23,7 @@ import { FilterOption } from '@components/filters/filters.type';
     },
   ],
 })
-export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
+export class AdvancedSearchComponent implements ControlValueAccessor {
 
   @Input() filterOptions: FilterOption[] = [
     {filterLabel: 'Filter 1', filterId: 'filterOne', filterVal: false},
@@ -31,18 +31,15 @@ export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
     {filterLabel: 'Filter 3', filterId: 'filterThree', filterVal: false},
     ];
 
+  @Output() searchClicked: EventEmitter<SearchEvent> = new EventEmitter<SearchEvent>();
+
   readonly form: FormGroup = this.formBuilder.group({
     search: new FormControl(''),
     filters: new FormControl([]),
   });
 
-  constructor(private formBuilder: FormBuilder, private appFacade: AppFacade) {}
+  constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.appFacade.advancedSearchState$.subscribe((state) =>
-      console.log('advancedSearchState$', state)
-    );
-  }
   onChange: any = () => {};
   onTouch: any = () => {};
 
@@ -57,7 +54,7 @@ export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
   }
 
   handleFormSubmit(): void {
-    this.appFacade.dispatchSaveForm({
+    this.searchClicked.emit({
       search: this.form.controls.search.value,
       filters: this.form.controls.filters.value,
     });

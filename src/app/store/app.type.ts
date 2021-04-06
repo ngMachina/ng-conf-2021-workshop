@@ -1,4 +1,3 @@
-export interface AppState {
-  search: string;
-  filters: string[];
-}
+import { SearchEvent } from '@components/advanced-search/advanced-search.type';
+
+export type AppState = SearchEvent;

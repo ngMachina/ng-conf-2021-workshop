@@ -5,7 +5,7 @@ import { AppState } from './app.type';
 
 export const initialState: AppState = {
   search: '',
-  filters: [],
+  filters: {},
 };
 
 const reducer: ActionReducer<AppState> = createReducer(
@@ -15,7 +15,7 @@ const reducer: ActionReducer<AppState> = createReducer(
     search,
     filters,
   })),
-  on(AppActions.clear, (_) => ({ search: '', filters: [] }))
+  on(AppActions.clear, (_) => ({ search: '', filters: {} }))
 );
 
 export const appReducer = (

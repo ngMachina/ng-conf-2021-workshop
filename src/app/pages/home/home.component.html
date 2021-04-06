@@ -6,6 +6,7 @@
     <form [formGroup]="form">
       <app-advanced-search
         [formControlName]="'advancedSearch'"
+        (searchClicked)="handleSearch($event)"
       ></app-advanced-search>
     </form>
   </div>

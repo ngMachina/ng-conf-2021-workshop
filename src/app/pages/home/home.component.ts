@@ -1,5 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { SearchEvent } from '@components/advanced-search/advanced-search.type';
+import { AppFacade } from '@store/app.facade';
 
 @Component({
   templateUrl: './home.component.html',
@@ -14,5 +16,10 @@ export class HomeComponent {
     },
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private appFacade: AppFacade) {}
+
+  handleSearch($event: SearchEvent): void {
+    this.appFacade.dispatchSaveForm($event);
+    console.log($event);
+  }
 }
