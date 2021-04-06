@@ -1,10 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
   FormGroup,
   FormBuilder,
 } from '@angular/forms';
+import { FilterOption } from '@components/filters/filters.type';
 
 @Component({
   selector: 'app-filters',
@@ -20,15 +21,19 @@ import {
   ],
 })
 export class FiltersComponent implements OnInit, ControlValueAccessor {
-  readonly form: FormGroup = this.formBuilder.group({
-    filterOne: false,
-    filterTwo: false,
-    filterThree: false,
-  });
+
+  @Input() filterOptions: FilterOption[] = [];
+
+  form: FormGroup | any;
 
   constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.form = this.formBuilder.group(this.filterOptions.reduce((filterAcc, option) => ({
+      ...filterAcc,
+      [option.filterId]: option.filterVal
+    }), {}));
+  }
 
   onChange: any = () => {};
   onTouch: any = () => {};

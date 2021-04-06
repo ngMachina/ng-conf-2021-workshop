@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 
 import { AppFacade } from '@store/app.facade';
+import { FilterOption } from '@components/filters/filters.type';
 
 @Component({
   selector: 'app-advanced-search',
@@ -23,6 +24,13 @@ import { AppFacade } from '@store/app.facade';
   ],
 })
 export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
+
+  @Input() filterOptions: FilterOption[] = [
+    {filterLabel: 'Filter 1', filterId: 'filterOne', filterVal: false},
+    {filterLabel: 'Filter 2', filterId: 'filterTwo', filterVal: false},
+    {filterLabel: 'Filter 3', filterId: 'filterThree', filterVal: false},
+    ];
+
   readonly form: FormGroup = this.formBuilder.group({
     search: new FormControl(''),
     filters: new FormControl([]),
@@ -35,7 +43,6 @@ export class AdvancedSearchComponent implements OnInit, ControlValueAccessor {
       console.log('advancedSearchState$', state)
     );
   }
-
   onChange: any = () => {};
   onTouch: any = () => {};
 

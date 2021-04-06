@@ -1,7 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from 'rxjs';
-
-import { ApiService } from '@service/api.service';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { HeaderMenu } from './types/header-menu.type';
 
 @Component({
@@ -10,14 +7,6 @@ import { HeaderMenu } from './types/header-menu.type';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
-  response$: Observable<HeaderMenu[]> | undefined;
-
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit(): void {
-    this.response$ = this.apiService.get<HeaderMenu[]>(
-      './assets/mocks/header/cms-response.json'
-    );
-  }
+export class HeaderComponent {
+  @Input() headerLinks: HeaderMenu[] | null = [];
 }

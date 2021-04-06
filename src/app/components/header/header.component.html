@@ -1,8 +1,8 @@
 <nav>
   <img src="assets/rangle-logo-black.png" alt="Rangle Logo" />
   <ul>
-    <ng-container *ngIf="response$ | async; let response">
-      <li *ngFor="let item of response">
+    <ng-container *ngIf="headerLinks?.length">
+      <li *ngFor="let item of headerLinks">
         <a [routerLink]="item.href"> {{ item.description }} </a>
       </li>
     </ng-container>

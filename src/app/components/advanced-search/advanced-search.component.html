@@ -3,5 +3,5 @@
     [formControlName]="'search'"
     (buttonClicked)="handleFormSubmit()"
   ></app-search-bar>
-  <app-filters [formControlName]="'filters'"></app-filters>
+  <app-filters [filterOptions]="filterOptions" [formControlName]="'filters'"></app-filters>
 </ng-container>
