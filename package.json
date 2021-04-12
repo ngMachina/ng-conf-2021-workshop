@@ -6,6 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "build-header": "ng build header-element --prod",
+    "build-advanced-search": "ng build advanced-search --prod --single-bundle",
+    "serve-header-vanilla": "npx http-server ./dist/header-element",
+    "serve-search-vanilla": "npx http-server ./dist/advanced-search",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ng-conf-2021-workshop</title>
+  <base href="/"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="styles.css"></head>
+<body>
+<header-element id="header-ele"></header-element>
+<script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="main.js" defer></script>
+<script>
+
+  const header = document.getElementById('header-ele');
+
+  header.headerLinks = [{href: 'https://www.google.com', description: 'Google!'}, {href: 'https://www.altavista.com', description: 'Altavista!'}];
+</script>
+</body>
+</html>
